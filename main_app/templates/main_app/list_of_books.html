@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load cache %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h3>Поиск: </h3>
+<form action="{% url 'search' %}" method="get">
+    <input name="q" type="text" placeholder="Search...">
+</form>
+{% cache 30 page_obj %}
+    {% for book in page_obj %}
+        <h4>{{ book }}</h4>
+        <img src="{{ book.small_image_url }}" alt="image">
+        <a href="{% url 'book' book.id %}"> Посмотреть подробнее</a>
+        {% for rate in ratings %}
+            {% if rate.book_id == book.id %}
+                Ваша оценка: {{ rate.rating }}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endcache %}
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% if recomm_books != '' %}
+    <div>
+        <h1>Специально для Вас</h1>
+        {% cache 30 recomm_books %}
+            {% for book in recomm_books %}
+                <h4>{{ book }}</h4>
+                <img src="{{ book.small_image_url }}" alt="image">
+                <a href="{% url 'book' book.id %}"> Посмотреть подробнее</a>
+            {% endfor %}
+        {% endcache %}
+    </div>
+{% else %}
+{% endif %}
+</body>
+</html>

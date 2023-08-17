@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div class="card-body">
+    <form action="{% url 'profile' user.id%}" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="small mb-1" for="{{ form.first_name.id_for_label }}">
+                        Имя
+                    </label>
+                    {{ form.first_name }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="small mb-1" for="{{ form.last_name.id_for_label }}">
+                        Фамилия
+                    </label>
+                    {{ form.last_name }}
+                </div>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="col-md-6">
+                <label class="small mb-1" for="{{ form.username.id_for_label }}">
+                    Имя пользователя
+                </label>
+                {{ form.username }}
+            </div>
+        </div>
+        <div class="form-row">
+        <label class="small mb-1" for="{{ form.read_books.id_for_label }}">
+                    Прочтенные книги
+                </label>
+            {{ form.read_books }}
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12" style="margin-top: 33px;">
+                <input class="btn btn-info btn-block" type="submit" value="Сохранить">
+            </div>
+        </div>
+        <div>
+            Прочтенные книги
+             {% for book in read_books %}
+                 <div>
+                 {{ book }}
+                     <a href="{% url 'book' book.id%}">Подробнее</a>
+                 </div>
+            {% endfor %}
+        </div>
+        <div>
+            Просмотренные книги
+             {% for book in checked_books %}
+                 <div>
+                 {{ book }}
+                     <a href="{% url 'book' book.id%}">Подробнее</a>
+                 </div>
+            {% endfor %}
+        </div>
+{#        <div>#}
+{#            Прочтенные книги#}
+{#             {% for book in read_books %}#}
+{#                 <div>#}
+{#                 {{ book }}#}
+{#                 <a href="{% url 'book' book.id%}">Подробнее</a>#}
+{#                 </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+        <div>
+            <a href="{% url 'welcome_page'%}">Welcome page</a>
+        </div>
+        <div>
+            <a href="{% url 'logout'%}">Выйти</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

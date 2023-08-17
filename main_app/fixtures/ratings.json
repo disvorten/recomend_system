@@ -1,0 +1,200 @@
+[
+  {
+    "model": "main_app.ratings",
+    "pk": 1,
+    "fields": {
+      "rating": 1,
+      "user": 1,
+      "book": 1
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 2,
+    "fields": {
+      "rating": 1,
+      "user": 1,
+      "book": 2
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 3,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 3
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 4,
+    "fields": {
+      "rating": 2,
+      "user": 1,
+      "book": 4
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 5,
+    "fields": {
+      "rating": 3,
+      "user": 1,
+      "book": 5
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 6,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 6
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 7,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 7
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 8,
+    "fields": {
+      "rating": 3,
+      "user": 1,
+      "book": 8
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 9,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 9
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 10,
+    "fields": {
+      "rating": 5,
+      "user": 1,
+      "book": 10
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 11,
+    "fields": {
+      "rating": 3,
+      "user": 1,
+      "book": 11
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 12,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 12
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 13,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 13
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 14,
+    "fields": {
+      "rating": 3,
+      "user": 1,
+      "book": 14
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 15,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 15
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 16,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 16
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 17,
+    "fields": {
+      "rating": 3,
+      "user": 1,
+      "book": 17
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 19,
+    "fields": {
+      "rating": 3,
+      "user": 1,
+      "book": 19
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 20,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 20
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 21,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 21
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 22,
+    "fields": {
+      "rating": 4,
+      "user": 1,
+      "book": 22
+    }
+  },
+  {
+    "model": "main_app.ratings",
+    "pk": 29,
+    "fields": {
+      "rating": 3,
+      "user": 2,
+      "book": 1
+    }
+  }
+]

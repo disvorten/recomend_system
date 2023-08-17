@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h4>{{ book }}</h4>
+    <img src="{{ book.image_url }}" alt="image">
+    {% if not user %}
+        <h4><a href="{% url 'login' %}">Залогиньтесь</a>, чтобы отметить книгу как прочитанную</h4>
+    {% else %}
+    {% if not IsinRead %}
+    <form action="{% url 'book' book.id%}" method="get">
+        <button name="Add">Добавить в прочтённые</button>
+    </form>
+    {% else %}
+        <button name="Add">Вы уже читали эту книгу!</button>
+        <form action="{% url 'book' book.id%}" method="post">
+            {% csrf_token %}
+            {% if not IsRated %}
+                <label for="{{ form.rating.id_for_label }}">Поставьте свою оценку книге</label>
+                    {{ form.rating }}
+            {% else %}
+                <h3>Ваша оценка этой книге: {{ rate }}</h3>
+                <label for="{{ form.rating.id_for_label }}">Поменять оценку</label>
+                    {{ form.rating }}
+            {% endif %}
+            <div class="col-lg-12" style="margin-top: 33px;">
+                <input class="btn btn-info btn-block" type="submit" value="Сохранить">
+            </div>
+        </form>
+    {% endif %}
+    {% endif %}
+    <a href="{% url 'books' %}"> Перейти к списку всех книг</a>
+</body>
+</html>

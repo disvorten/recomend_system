@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div>
+    {% if not IsAuth%}
+        <h2>Welcome</h2>
+        <h3>
+            <a href="{% url 'login' %}">Логин</a>
+        </h3>
+        <h3>
+            <a href="{% url 'registration' %}">Регистрация</a>
+        </h3>
+    {% else %}
+        <h2>Welcome, {{ user.username }}</h2>
+        <h3>
+            <a href="{% url 'profile' user.id%}">Профиль</a>
+        </h3>
+        <h3>
+            <a href="{% url 'books' %}">Список книг</a>
+        </h3>
+    {% endif %}
+</div>
+
+</body>
+</html>
